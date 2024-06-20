@@ -1,0 +1,13 @@
+name: ssdg
+channels:
+    - pytorch
+    - conda-forge
+    - defaults
+dependencies:
+    - python
+    - numpy
+    - pandas
+    - pytorch
+    - torchvision
+    - scikit-learn
+    - matplotlib

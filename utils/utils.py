@@ -74,7 +74,7 @@ def sample_frames(flag, num_frames, dataset_name):
         frame_prefix = '/'.join(photo_path.split('/')[:-1])
         # the last frame
         if (i == length - 1):
-            photo_frame = int(photo_path.split('/')[-1].split('.')[0])
+            photo_frame = int(photo_path.split('/')[-1].split('.')[0].strip('_'))
             single_video_frame_list.append(photo_frame)
             single_video_frame_num += 1
             single_video_label = photo_label
@@ -86,7 +86,7 @@ def sample_frames(flag, num_frames, dataset_name):
             for j in range(num_frames):
                 dict = {}
                 dict['photo_path'] = saved_frame_prefix + '/' + str(
-                    single_video_frame_list[6 + j * frame_interval]) + '.png'
+                    single_video_frame_list[0 + j * frame_interval]) + '.png'
                 dict['photo_label'] = single_video_label
                 dict['photo_belong_to_video_ID'] = video_number
                 final_json.append(dict)
@@ -95,7 +95,7 @@ def sample_frames(flag, num_frames, dataset_name):
             single_video_frame_list.clear()
             single_video_frame_num = 0
         # get every frame information
-        photo_frame = int(photo_path.split('/')[-1].split('.')[0])
+        photo_frame = int(photo_path.split('/')[-1].split('.')[0].strip('_'))
         single_video_frame_list.append(photo_frame)
         single_video_frame_num += 1
         single_video_label = photo_label

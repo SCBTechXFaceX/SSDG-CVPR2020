@@ -136,9 +136,11 @@ def resnet18(pretrained=False, **kwargs):
     """
     model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
     # change your path
-    model_path = '/home/jiayunpei/SSDG_github/pretrained_model/resnet18-5c106cde.pth'
+    device = torch.device('cuda') if (torch.cuda.is_available()) else torch.device('cpu')
+    current_path = os.path.abspath(os.curdir)
+    model_path = os.path.abspath(os.path.join(current_path, '../..')) + '/pretrained_model/resnet18-5c106cde.pth'
     if pretrained:
-        model.load_state_dict(torch.load(model_path))
+        model.load_state_dict(torch.load(model_path, map_location=device))
         print("loading model: ", model_path)
     # print(model)
     return model
