@@ -8,6 +8,7 @@ from torch.nn import functional as F
 import numpy as np
 
 def eval(valid_dataloader, model, norm_flag):
+    device = torch.device('cuda') if (torch.cuda.is_available()) else torch.device('cpu')
     criterion = nn.CrossEntropyLoss()
     valid_losses = AverageMeter()
     valid_top1 = AverageMeter()
@@ -18,8 +19,8 @@ def eval(valid_dataloader, model, norm_flag):
     target_dict_tmp = {}
     with torch.no_grad():
         for iter, (input, target, videoID) in enumerate(valid_dataloader):
-            input = Variable(input).cuda()
-            target = Variable(torch.from_numpy(np.array(target)).long()).cuda()
+            input = Variable(input).to(device)
+            target = Variable(torch.from_numpy(np.array(target)).long()).to(device)
             cls_out, feature = model(input, norm_flag)
             prob = F.softmax(cls_out, dim=1).cpu().data.numpy()[:, 1]
             label = target.cpu().data.numpy()
