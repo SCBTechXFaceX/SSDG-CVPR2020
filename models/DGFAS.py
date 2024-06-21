@@ -243,7 +243,8 @@ class Discriminator(nn.Module):
             self.fc2
         )
         self.grl_layer = GRL()
-
+    
+    @staticmethod
     def forward(self, feature):
         adversarial_out = self.ad_net(self.grl_layer(feature))
         return adversarial_out
