@@ -208,62 +208,25 @@ class Classifier(nn.Module):
             classifier_out = self.classifier_layer(input)
         return classifier_out
 
-# class GRL(torch.autograd.Function):
-#     def __init__(self):
-#         self.iter_num = 0
-#         self.alpha = 10
-#         self.low = 0.0
-#         self.high = 1.0
-#         self.max_iter = 4000  # be same to the max_iter of config.py
-    
-#     @staticmethod
-#     def forward(self, input):
-#         self.iter_num += 1
-#         return input * 1.0
-    
-#     @staticmethod
-#     def backward(self, gradOutput):
-#         coeff = np.float(2.0 * (self.high - self.low) / (1.0 + np.exp(-self.alpha * self.iter_num / self.max_iter))
-#                          - (self.high - self.low) + self.low)
-#         return -coeff * gradOutput
 class GRL(torch.autograd.Function):
-    # Class-level dictionary to keep track of state for each instance
-    instance_state = {}
-
+    def __init__(self):
+        self.iter_num = 0
+        self.alpha = 10
+        self.low = 0.0
+        self.high = 1.0
+        self.max_iter = 4000  # be same to the max_iter of config.py
+    
     @staticmethod
-    def init_state(instance_id):
-        GRL.instance_state[instance_id] = {
-            'iter_num': 0,
-            'alpha': 10,
-            'low': 0.0,
-            'high': 1.0,
-            'max_iter': 4000
-        }
-
-    @staticmethod
-    def forward(ctx, input, instance_id):
-        # Initialize state if not already done
-        if instance_id not in GRL.instance_state:
-            GRL.init_state(instance_id)
-        
-        state = GRL.instance_state[instance_id]
-        state['iter_num'] += 1
-        ctx.save_for_backward(input)
-        ctx.instance_id = instance_id
+    def forward(self, input):
+        self.iter_num += 1
         return input * 1.0
-
+    
     @staticmethod
-    def backward(ctx, grad_output):
-        state = GRL.instance_state[ctx.instance_id]
-        iter_num = state['iter_num']
-        alpha = state['alpha']
-        low = state['low']
-        high = state['high']
-        max_iter = state['max_iter']
+    def backward(self, gradOutput):
+        coeff = np.float(2.0 * (self.high - self.low) / (1.0 + np.exp(-self.alpha * self.iter_num / self.max_iter))
+                         - (self.high - self.low) + self.low)
+        return -coeff * gradOutput
 
-        coeff = np.float(2.0 * (high - low) / (1.0 + np.exp(-alpha * iter_num / max_iter))
-                         - (high - low) + low)
-        return -coeff * grad_output, None
 class Discriminator(nn.Module):
     def __init__(self):
         super(Discriminator, self).__init__()
