@@ -209,24 +209,45 @@ class Classifier(nn.Module):
         return classifier_out
 
 class GRL(torch.autograd.Function):
-    def __init__(self):
-        self.iter_num = 0
-        self.alpha = 10
-        self.low = 0.0
-        self.high = 1.0
-        self.max_iter = 4000  # be same to the max_iter of config.py
-    
-    @staticmethod
-    def forward(self, input):
-        self.iter_num += 1
-        return input * 1.0
-    
-    @staticmethod
-    def backward(self, gradOutput):
-        coeff = np.float(2.0 * (self.high - self.low) / (1.0 + np.exp(-self.alpha * self.iter_num / self.max_iter))
-                         - (self.high - self.low) + self.low)
-        return -coeff * gradOutput
+    # Class-level dictionary to keep track of state for each instance
+    instance_state = {}
 
+    @staticmethod
+    def init_state(instance_id):
+        GRL.instance_state[instance_id] = {
+            'iter_num': 0,
+            'alpha': 10,
+            'low': 0.0,
+            'high': 1.0,
+            'max_iter': 4000
+        }
+
+    @staticmethod
+    def forward(ctx, input, instance_id):
+        # Initialize state if not already done
+        if instance_id not in GRL.instance_state:
+            GRL.init_state(instance_id)
+        
+        state = GRL.instance_state[instance_id]
+        state['iter_num'] += 1
+        ctx.save_for_backward(input)
+        ctx.instance_id = instance_id
+        return input * 1.0
+
+    @staticmethod
+    def backward(ctx, grad_output):
+        state = GRL.instance_state[ctx.instance_id]
+        iter_num = state['iter_num']
+        alpha = state['alpha']
+        low = state['low']
+        high = state['high']
+        max_iter = state['max_iter']
+
+        coeff = np.float(2.0 * (high - low) / (1.0 + np.exp(-alpha * iter_num / max_iter))
+                         - (high - low) + low)
+        return -coeff * grad_output, None
+
+# Usage in Discriminator class
 class Discriminator(nn.Module):
     def __init__(self):
         super(Discriminator, self).__init__()
@@ -242,11 +263,52 @@ class Discriminator(nn.Module):
             nn.Dropout(0.5),
             self.fc2
         )
-        self.grl_layer = GRL().apply
-    
+        self.instance_id = id(self)  # Unique ID for this instance
+
     def forward(self, feature):
-        adversarial_out = self.ad_net(self.grl_layer(feature))
+        reversed_feature = GRL.apply(feature, self.instance_id)  # Apply GRL with instance ID
+        adversarial_out = self.ad_net(reversed_feature)
         return adversarial_out
+
+# class GRL(torch.autograd.Function):
+#     def __init__(self):
+#         self.iter_num = 0
+#         self.alpha = 10
+#         self.low = 0.0
+#         self.high = 1.0
+#         self.max_iter = 4000  # be same to the max_iter of config.py
+    
+#     @staticmethod
+#     def forward(self, input):
+#         self.iter_num += 1
+#         return input * 1.0
+    
+#     @staticmethod
+#     def backward(self, gradOutput):
+#         coeff = np.float(2.0 * (self.high - self.low) / (1.0 + np.exp(-self.alpha * self.iter_num / self.max_iter))
+#                          - (self.high - self.low) + self.low)
+#         return -coeff * gradOutput
+
+# class Discriminator(nn.Module):
+#     def __init__(self):
+#         super(Discriminator, self).__init__()
+#         self.fc1 = nn.Linear(512, 512)
+#         self.fc1.weight.data.normal_(0, 0.01)
+#         self.fc1.bias.data.fill_(0.0)
+#         self.fc2 = nn.Linear(512, 3)
+#         self.fc2.weight.data.normal_(0, 0.3)
+#         self.fc2.bias.data.fill_(0.0)
+#         self.ad_net = nn.Sequential(
+#             self.fc1,
+#             nn.ReLU(),
+#             nn.Dropout(0.5),
+#             self.fc2
+#         )
+#         self.grl_layer = GRL().apply
+    
+#     def forward(self, feature):
+#         adversarial_out = self.ad_net(self.grl_layer(feature))
+#         return adversarial_out
 
 class DG_model(nn.Module):
     def __init__(self, model):
