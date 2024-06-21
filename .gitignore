@@ -2,3 +2,5 @@
 /data_label
 __pycache__
 .vscode
+env
+logs

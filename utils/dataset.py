@@ -1,3 +1,4 @@
+import os
 import torch
 from torchvision import transforms as T
 from torch.utils.data import Dataset
@@ -31,13 +32,13 @@ class YunpeiDataset(Dataset):
 
     def __getitem__(self, item):
         if self.train:
-            img_path = self.photo_path[item]
+            img_path = "../../" + self.photo_path[item]
             label = self.photo_label[item]
             img = Image.open(img_path)
             img = self.transforms(img)
             return img, label
         else:
-            img_path = self.photo_path[item]
+            img_path = "../../" + self.photo_path[item]
             label = self.photo_label[item]
             videoID = self.photo_belong_to_video_ID[item]
             img = Image.open(img_path)

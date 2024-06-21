@@ -99,7 +99,6 @@ def train():
     epoch = 1
     if(len(config.gpus) > 1):
         net = torch.nn.DataParallel(net).to(device)
-
     for iter_num in range(max_iter+1):
         if (iter_num % src1_iter_per_epoch_real == 0):
             src1_train_iter_real = iter(src1_train_dataloader_real)
@@ -121,35 +120,36 @@ def train():
 
         net.train(True)
         ad_net_real.train(True)
+
         optimizer.zero_grad()
         adjust_learning_rate(optimizer, epoch, init_param_lr, config.lr_epoch_1, config.lr_epoch_2)
         ######### data prepare #########
-        src1_img_real, src1_label_real = src1_train_iter_real.next()
+        src1_img_real, src1_label_real = next(src1_train_iter_real)
         src1_img_real = src1_img_real.to(device)
         src1_label_real = src1_label_real.to(device)
         input1_real_shape = src1_img_real.shape[0]
 
-        src2_img_real, src2_label_real = src2_train_iter_real.next()
+        src2_img_real, src2_label_real = next(src2_train_iter_real)
         src2_img_real = src2_img_real.to(device)
         src2_label_real = src2_label_real.to(device)
         input2_real_shape = src2_img_real.shape[0]
 
-        src3_img_real, src3_label_real = src3_train_iter_real.next()
+        src3_img_real, src3_label_real = next(src3_train_iter_real)
         src3_img_real = src3_img_real.to(device)
         src3_label_real = src3_label_real.to(device)
         input3_real_shape = src3_img_real.shape[0]
 
-        src1_img_fake, src1_label_fake = src1_train_iter_fake.next()
+        src1_img_fake, src1_label_fake = next(src1_train_iter_fake)
         src1_img_fake = src1_img_fake.to(device)
         src1_label_fake = src1_label_fake.to(device)
         input1_fake_shape = src1_img_fake.shape[0]
 
-        src2_img_fake, src2_label_fake = src2_train_iter_fake.next()
+        src2_img_fake, src2_label_fake = next(src2_train_iter_fake)
         src2_img_fake = src2_img_fake.to(device)
         src2_label_fake = src2_label_fake.to(device)
         input2_fake_shape = src2_img_fake.shape[0]
 
-        src3_img_fake, src3_label_fake = src3_train_iter_fake.next()
+        src3_img_fake, src3_label_fake = next(src3_train_iter_fake)
         src3_img_fake = src3_img_fake.to(device)
         src3_label_fake = src3_label_fake.to(device)
         input3_fake_shape = src3_img_fake.shape[0]
@@ -162,7 +162,6 @@ def train():
 
         ######### forward #########
         classifier_label_out, feature = net(input_data, config.norm_flag)
-
         ######### single side adversarial learning #########
         input1_shape = input1_real_shape + input1_fake_shape
         input2_shape = input2_real_shape + input2_fake_shape

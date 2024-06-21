@@ -24,7 +24,7 @@ class DefaultConfigs(object):
     src1_train_num_frames = 1
     src2_data = 'middle'
     src2_train_num_frames = 1
-    src3_data = 'high'
+    src3_data = 'low'
     src3_train_num_frames = 1
     # target data information
     tgt_data = 'high'

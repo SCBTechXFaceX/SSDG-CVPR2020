@@ -86,7 +86,7 @@ def sample_frames(flag, num_frames, dataset_name):
             for j in range(num_frames):
                 dict = {}
                 dict['photo_path'] = saved_frame_prefix + '/' + str(
-                    single_video_frame_list[0 + j * frame_interval]) + '.png'
+                    single_video_frame_list[0 + j * frame_interval]) + '_.jpg'
                 dict['photo_label'] = single_video_label
                 dict['photo_belong_to_video_ID'] = video_number
                 final_json.append(dict)
