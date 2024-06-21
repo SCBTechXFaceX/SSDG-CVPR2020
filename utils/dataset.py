@@ -3,6 +3,7 @@ import torch
 from torchvision import transforms as T
 from torch.utils.data import Dataset
 from PIL import Image
+import cv2
 
 class YunpeiDataset(Dataset):
     def __init__(self, data_pd, transforms=None, train=True):
@@ -54,12 +55,14 @@ class KaggleDataset(Dataset):
         if transforms is None:
             if not train:
                 self.transforms = T.Compose([
+                    T.Resize(size=(256,256)),
                     T.ToTensor(),
                     T.Normalize(mean=[0.485, 0.456, 0.406],
                                 std=[0.229, 0.224, 0.225])
                 ])
             else:
                 self.transforms = T.Compose([
+                    T.Resize(size=(256,256)),
                     T.RandomHorizontalFlip(),
                     T.ToTensor(),
                     T.Normalize(mean=[0.485, 0.456, 0.406],
@@ -75,13 +78,15 @@ class KaggleDataset(Dataset):
         if self.train:
             img_path = '/kaggle/input/celeba-spoof-ssdg/' + self.photo_path[item]
             label = self.photo_label[item]
-            img = Image.open(img_path)
+            img = cv2.imread(img_path)
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             img = self.transforms(img)
             return img, label
         else:
             img_path = '/kaggle/input/celeba-spoof-ssdg/' + self.photo_path[item]
             label = self.photo_label[item]
             videoID = self.photo_belong_to_video_ID[item]
-            img = Image.open(img_path)
+            img = cv2.imread(img_path)
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             img = self.transforms(img)
             return img, label, videoID
