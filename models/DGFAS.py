@@ -215,11 +215,13 @@ class GRL(torch.autograd.Function):
         self.low = 0.0
         self.high = 1.0
         self.max_iter = 4000  # be same to the max_iter of config.py
-
+    
+    @staticmethod
     def forward(self, input):
         self.iter_num += 1
         return input * 1.0
-
+    
+    @staticmethod
     def backward(self, gradOutput):
         coeff = np.float(2.0 * (self.high - self.low) / (1.0 + np.exp(-self.alpha * self.iter_num / self.max_iter))
                          - (self.high - self.low) + self.low)
