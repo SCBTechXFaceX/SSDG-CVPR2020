@@ -73,13 +73,13 @@ class KaggleDataset(Dataset):
 
     def __getitem__(self, item):
         if self.train:
-            img_path = '/kaggle/input/celeba-spoof-ssdg/data/' + self.photo_path[item]
+            img_path = '/kaggle/input/celeba-spoof-ssdg/' + self.photo_path[item]
             label = self.photo_label[item]
             img = Image.open(img_path)
             img = self.transforms(img)
             return img, label
         else:
-            img_path = '/kaggle/input/celeba-spoof-ssdg/data/' + self.photo_path[item]
+            img_path = '/kaggle/input/celeba-spoof-ssdg/' + self.photo_path[item]
             label = self.photo_label[item]
             videoID = self.photo_belong_to_video_ID[item]
             img = Image.open(img_path)
