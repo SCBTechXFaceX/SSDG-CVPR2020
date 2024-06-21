@@ -242,12 +242,7 @@ class GRL(torch.autograd.Function):
         low = state['low']
         high = state['high']
         max_iter = state['max_iter']
-        print("iter_num " , iter_num)
-        print("alpha ", alpha)
-        print("low", low)
-        print("high", high)
-        print("max_iter", max_iter)
-        coeff = np.float(2.0 * (high - low) / (1.0 + np.exp(-alpha * iter_num / max_iter))
+        coeff = np.float64(2.0 * (high - low) / (1.0 + np.exp(-alpha * iter_num / max_iter))
                          - (high - low) + low)
         return -coeff * grad_output, None
 
