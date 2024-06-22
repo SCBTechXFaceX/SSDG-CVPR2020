@@ -49,7 +49,7 @@ def eval(valid_dataloader, model, norm_flag):
         label_list = np.append(label_list, avg_single_video_label)
         # compute loss and acc for every video
         avg_single_video_output = (sum(output_dict_tmp[key]) / len(output_dict_tmp[key])).type(torch.LongTensor)
-        avg_single_video_target = (sum(target_dict_tmp[key]) / len(target_dict_tmp[key])).type(torch.LongTensor)
+        avg_single_video_target = (sum(target_dict_tmp[key]) / len(target_dict_tmp[key]))
         loss = criterion(avg_single_video_output, avg_single_video_target)
         acc_valid = accuracy(avg_single_video_output, avg_single_video_target, topk=(1,))
         valid_losses.update(loss.item())
