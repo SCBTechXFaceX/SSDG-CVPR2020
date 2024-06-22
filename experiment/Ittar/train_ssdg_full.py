@@ -3,7 +3,7 @@ sys.path.append('../../')
 
 from utils.utils import save_checkpoint, AverageMeter, Logger, accuracy, mkdirs, adjust_learning_rate, time_to_str
 from utils.evaluate import eval
-from utils.get_loader import get_dataset
+from utils.get_loader import get_dataset, get_exp_dataset
 from models.DGFAS import DG_model, Discriminator
 from loss.hard_triplet_loss import HardTripletLoss
 from loss.AdLoss import Real_AdLoss, Fake_AdLoss
@@ -36,7 +36,7 @@ def train():
     src1_train_dataloader_fake, src1_train_dataloader_real, \
     src2_train_dataloader_fake, src2_train_dataloader_real, \
     src3_train_dataloader_fake, src3_train_dataloader_real, \
-    tgt_valid_dataloader = get_dataset(config.src1_data, config.src1_train_num_frames, 
+    tgt_valid_dataloader = get_exp_dataset(config.src1_data, config.src1_train_num_frames, 
                                        config.src2_data, config.src2_train_num_frames, 
                                        config.src3_data, config.src3_train_num_frames,
                                        config.tgt_data, config.tgt_test_num_frames, config.batch_size)

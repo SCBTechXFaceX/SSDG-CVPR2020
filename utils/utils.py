@@ -112,6 +112,50 @@ def sample_frames(flag, num_frames, dataset_name):
     sample_data_pd = pd.read_json(f_json)
     return sample_data_pd
 
+def itar_frames(flag, num_frames, dataset_name):
+    '''
+        from every video (frames) to sample num_frames to test
+        return: the choosen frames' path and label
+    '''
+    # The process is a litter cumbersome, you can change to your way for convenience
+    root_path = '../../data_label/' + dataset_name
+    if(flag == 0): # select the fake images
+        label_path = root_path + '/fake_label.json'
+        save_label_path = root_path + '/choose_fake_label.json'
+    elif(flag == 1): # select the real images
+        label_path = root_path + '/real_label.json'
+        save_label_path = root_path + '/choose_real_label.json'
+    else: # select all the real and fake images
+        label_path = root_path + '/all_label.json'
+        save_label_path = root_path + '/choose_all_label.json'
+
+    all_label_json = json.load(open(label_path, 'r'))
+    f_sample = open(save_label_path, 'w')
+    length = len(all_label_json)
+    video_number = 0
+    final_json = []
+    for i in range(length):
+        video_number += 1
+        photo_path = all_label_json[i]['photo_path']
+        photo_label = all_label_json[i]['photo_label']
+        dict = {}
+        dict['photo_path'] = photo_path
+        dict['photo_label'] = photo_label
+        dict['photo_belong_to_video_ID'] = i
+        final_json.append(dict)
+    if(flag == 0):
+        print("Total video number(fake): ", video_number, dataset_name)
+    elif(flag == 1):
+        print("Total video number(real): ", video_number, dataset_name)
+    else:
+        print("Total video number(target): ", video_number, dataset_name)
+    json.dump(final_json, f_sample, indent=4)
+    f_sample.close()
+
+    f_json = open(save_label_path)
+    sample_data_pd = pd.read_json(f_json)
+    return sample_data_pd
+
 class AverageMeter(object):
     """Computes and stores the average and current value"""
     def __init__(self):
