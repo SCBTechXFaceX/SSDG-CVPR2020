@@ -50,6 +50,7 @@ def eval(valid_dataloader, model, norm_flag):
         # compute loss and acc for every video
         avg_single_video_output = (sum(output_dict_tmp[key]) / len(output_dict_tmp[key])).type(torch.LongTensor)
         avg_single_video_target = (sum(target_dict_tmp[key]) / len(target_dict_tmp[key]))
+        print('output_dict_tmp key value: ', output_dict_tmp[key])
         print('avg_single_video_output: ', avg_single_video_output)
         print('avg_single_video_output shape: ', avg_single_video_output.shape)
         print('avg_single_video_target: ', avg_single_video_target)
