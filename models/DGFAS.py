@@ -135,18 +135,18 @@ def resnet18(pretrained=False, **kwargs):
         pretrained (bool): If True, returns a model pre-trained on ImageNet
     """
     device = torch.device('cuda') if (torch.cuda.is_available()) else torch.device('cpu')
-    model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs).to(device)
+    model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
     # change your path
     print('resnet device: ', device)
     current_path = os.path.abspath(os.curdir)
     model_path = os.path.abspath(os.path.join(current_path, '../..')) + '/pretrained_model/resnet18-5c106cde.pth'
     # pretrain_dict = torch.hub.load_state_dict_from_url('https://download.pytorch.org/models/resnet18-5c106cde.pth')
     if pretrained:
-        model.load_state_dict(torch.load(model_path, map_location=device), strict=False)
+        model.load_state_dict(torch.load(model_path), strict=False)
         # model.load_state_dict(pretrain_dict, strict=False)
         print("loading model: ", model_path)
     # print(model)
-    return model
+    return model.to(device)
 
 class Feature_Generator_ResNet18(nn.Module):
     def __init__(self):
