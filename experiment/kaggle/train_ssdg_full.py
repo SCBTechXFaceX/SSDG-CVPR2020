@@ -29,7 +29,7 @@ torch.cuda.manual_seed(config.seed)
 os.environ["CUDA_VISIBLE_DEVICES"] = config.gpus
 torch.backends.cudnn.benchmark = False
 torch.backends.cudnn.deterministic = True
-device = torch.device('cuda') if (torch.cuda.is_available()) else torch.device('cpu')
+device = torch.device('cuda')
 
 def train():
     mkdirs(config.checkpoint_path, config.best_model_path, config.logs)
