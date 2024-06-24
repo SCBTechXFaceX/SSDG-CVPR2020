@@ -1,3 +1,4 @@
+import argparse
 import sys
 sys.path.append('../../')
 
@@ -243,6 +244,20 @@ def train():
             time.sleep(0.01)
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='SSDG')
+    parser.add_argument("--batch_size", default=config.batch_size, type=int, help="train batch size")
+    parser.add_argument("--max_iter", default=config.max_iter, type=int, help="train batch size")
+    parser.add_argument("--src1_data", default=config.src1_data, type=str, help="train batch size")
+    parser.add_argument("--src2_data", default=config.src2_data, type=str, help="train batch size")
+    parser.add_argument("--src3_data", default=config.src3_data, type=str, help="train batch size")
+    
+    args = parser.parse_args()
+    config.batch_size = args.batch_size
+    config.max_iter = args.max_iter
+    config.src1_data = args.src1_data
+    config.src2_data = args.src2_data
+    config.src3_data = args.src3_data
+
     train()
 
 
