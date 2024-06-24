@@ -164,7 +164,7 @@ def train():
         source_label = torch.cat([src1_label_real, src1_label_fake,
                                   src2_label_real, src2_label_fake,
                                   src3_label_real, src3_label_fake], dim=0)
-
+        print('input batch: ', src1_label_real.size(0))
         ######### forward #########
         classifier_label_out, feature = net(input_data, config.norm_flag)
         ######### single side adversarial learning #########
