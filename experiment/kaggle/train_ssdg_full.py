@@ -255,6 +255,8 @@ if __name__ == '__main__':
     config.src1_data = args.src1_data
     config.src2_data = args.src2_data
     config.src3_data = args.src3_data
+    device = torch.device('cuda') if (torch.cuda.is_available()) else torch.device('cpu')
+
     print(device)
     train()
 
