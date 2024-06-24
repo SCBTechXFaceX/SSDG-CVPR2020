@@ -97,8 +97,9 @@ def train():
 
     max_iter = config.max_iter
     epoch = 1
-    print("learn all image at iter: ", max([src1_iter_per_epoch_real, src2_iter_per_epoch_real, src3_iter_per_epoch_real, 
-               src1_iter_per_epoch_fake, src2_iter_per_epoch_fake, src3_iter_per_epoch_fake]))
+    all_image_iter = max([src1_iter_per_epoch_real, src2_iter_per_epoch_real, src3_iter_per_epoch_real, 
+               src1_iter_per_epoch_fake, src2_iter_per_epoch_fake, src3_iter_per_epoch_fake])
+    print("learn all image at iter: ", all_image_iter)
     if(len(config.gpus) > 1):
         net = torch.nn.DataParallel(net).to(device)
     for iter_num in range(max_iter+1):
@@ -116,6 +117,8 @@ def train():
             src3_train_iter_fake = iter(src3_train_dataloader_fake)
         if (iter_num != 0 and iter_num % iter_per_epoch == 0):
             epoch = epoch + 1
+        if (iter_num % all_image_iter == 0 ):
+            print(f'learn all image at {iter_num // all_image_iter} times')
         param_lr_tmp = []
         for param_group in optimizer.param_groups:
             param_lr_tmp.append(param_group["lr"])
