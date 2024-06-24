@@ -11,7 +11,7 @@ class DefaultConfigs(object):
     pretrained = True
     model = 'resnet18'     # resnet18 or maddg
     # training parameters
-    gpus = "3"
+    gpus = "1"
     batch_size = 10
     norm_flag = True
     max_iter = 4000
