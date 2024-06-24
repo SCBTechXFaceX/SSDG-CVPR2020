@@ -137,6 +137,7 @@ def resnet18(pretrained=False, **kwargs):
     model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
     # change your path
     device = torch.device('cuda') if (torch.cuda.is_available()) else torch.device('cpu')
+    print('resnet device: ', device)
     current_path = os.path.abspath(os.curdir)
     model_path = os.path.abspath(os.path.join(current_path, '../..')) + '/pretrained_model/resnet18-5c106cde.pth'
     # pretrain_dict = torch.hub.load_state_dict_from_url('https://download.pytorch.org/models/resnet18-5c106cde.pth')
