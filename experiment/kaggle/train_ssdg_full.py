@@ -26,7 +26,7 @@ np.random.seed(config.seed)
 torch.manual_seed(config.seed)
 torch.cuda.manual_seed_all(config.seed)
 torch.cuda.manual_seed(config.seed)
-os.environ["CUDA_VISIBLE_DEVICES"] = config.gpus
+# os.environ["CUDA_VISIBLE_DEVICES"] = config.gpus
 torch.backends.cudnn.benchmark = False
 torch.backends.cudnn.deterministic = True
 device = torch.device('cuda') if (torch.cuda.is_available()) else torch.device('cpu')
