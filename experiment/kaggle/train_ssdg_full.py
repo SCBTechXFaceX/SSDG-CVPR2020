@@ -99,7 +99,7 @@ def train():
     epoch = 1
     all_image_iter = max([src1_iter_per_epoch_real, src2_iter_per_epoch_real, src3_iter_per_epoch_real, 
                src1_iter_per_epoch_fake, src2_iter_per_epoch_fake, src3_iter_per_epoch_fake])
-    print("learn all image at iter: ", all_image_iter)
+    print("learn all image at iter: ", all_image_iter // config.batch_size)
     if(len(config.gpus) > 1):
         net = torch.nn.DataParallel(net).to(device)
     for iter_num in range(max_iter+1):
