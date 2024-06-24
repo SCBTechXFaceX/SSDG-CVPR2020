@@ -249,7 +249,7 @@ if __name__ == '__main__':
     parser.add_argument("--src1_data", default=config.src1_data, type=str, help="train batch size")
     parser.add_argument("--src2_data", default=config.src2_data, type=str, help="train batch size")
     parser.add_argument("--src3_data", default=config.src3_data, type=str, help="train batch size")
-    print(device)
+    print(torch.cuda.is_available())
     args = parser.parse_args()
     config.batch_size = args.batch_size
     config.max_iter = args.max_iter
