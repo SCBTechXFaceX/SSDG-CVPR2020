@@ -27,7 +27,7 @@ class DefaultConfigs(object):
     src3_data = 'low'
     src3_train_num_frames = 1
     # target data information
-    tgt_data = 'low'
+    tgt_data = 'valid'
     tgt_test_num_frames = 1
     # paths information
     checkpoint_path = './' + tgt_data + '_checkpoint/' + model + '/DGFANet/'
