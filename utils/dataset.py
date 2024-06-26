@@ -82,7 +82,7 @@ class KaggleDataset(Dataset):
             img = self.transforms(img)
             return img, label
         else:
-            img_path = '/kaggle/input/valid-ssdg/valid' + self.photo_path[item]
+            img_path = '/kaggle/input/valid-ssdg/' + self.photo_path[item]
             label = self.photo_label[item]
             videoID = self.photo_belong_to_video_ID[item]
             img = Image.open(img_path).convert("RGB")
