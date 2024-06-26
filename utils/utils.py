@@ -243,6 +243,8 @@ def save_checkpoint(save_list, is_best, model, gpus, checkpoint_path, best_model
     best_model_ACC = save_list[3]
     best_model_ACER = save_list[4]
     threshold = save_list[5]
+    apcer = save_list[7]
+    bpcer = save_list[8]
     if(len(gpus) > 1):
         old_state_dict = model.state_dict()
         from collections import OrderedDict
@@ -259,7 +261,9 @@ def save_checkpoint(save_list, is_best, model, gpus, checkpoint_path, best_model
             "best_model_EER": best_model_HTER,
             "best_model_ACER": best_model_ACER,
             "best_model_ACC": best_model_ACC,
-            "threshold": threshold
+            "threshold": threshold,
+            "apcer": apcer,
+            "bpcer": bpcer
         }
     else:
         state = {
@@ -269,7 +273,9 @@ def save_checkpoint(save_list, is_best, model, gpus, checkpoint_path, best_model
             "best_model_EER": best_model_HTER,
             "best_model_ACER": best_model_ACER,
             "best_model_ACC": best_model_ACC,
-            "threshold": threshold
+            "threshold": threshold,
+            "apcer": apcer,
+            "bpcer": bpcer
         }
     filepath = checkpoint_path + filename
     torch.save(state, filepath)

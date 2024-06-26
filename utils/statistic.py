@@ -62,15 +62,18 @@ def get_EER_states(probs, labels, grid_density = 10000):
     return EER, thr, FRR_list, FAR_list
 
 def get_HTER_at_thr(probs, labels, thr):
+    return get_calculate_at_thr(probs=probs, labels=labels, thr=thr)[2]
+
+def get_calculate_at_thr(probs, labels, thr):
     TN, FN, FP, TP = eval_state(probs, labels, thr)
     if (FN + TP == 0):
-        FRR = 1.0
-        FAR = FP / float(FP + TN)
+        APCER = FP / float(FP + TN)
+        BPCER = 1.0
     elif(FP + TN == 0):
-        FAR = 1.0
-        FRR = FN / float(FN + TP)
+        APCER = 1.0
+        BPCER = FN / float(FN + TP)
     else:
-        FAR = FP / float(FP + TN)
-        FRR = FN / float(FN + TP)
-    HTER = (FAR + FRR) / 2.0
-    return HTER
+        APCER = FP / float(FP + TN) # APCER
+        BPCER = FN / float(FN + TP) # BPCER
+    HTER = (APCER + BPCER) / 2.0
+    return APCER, BPCER, HTER

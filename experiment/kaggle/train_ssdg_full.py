@@ -57,16 +57,16 @@ def train():
     ad_net_fake = Discriminator().to(device)
     log = Logger()
     log.open(config.logs + config.tgt_data + '_log_SSDG.txt', mode='a')
-    log.write("\n----------------------------------------------- [START %s] %s\n\n" % (
+    log.write("\n-------------------------------------------------------- [START %s] %s\n\n" % (
     datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '-' * 51))
     print("Norm_flag: ", config.norm_flag)
     log.write('** start training target model! **\n')
     log.write(
-        '--------|------------- VALID -------------|--- classifier ---|------ Current Best ------|--------------|\n')
+        '--------|--------------------- VALID --------------------|--- classifier ---|------ Current Best ------|--------------|\n')
     log.write(
-        '  iter  |   loss   top-1   HTER    AUC    |   loss   top-1   |   top-1   HTER    AUC    |    time      |\n')
+        '  iter  |   loss   top-1   HTER    AUC   APCER   BPCER   |   loss   top-1   |   top-1   HTER    AUC    |    time      |\n')
     log.write(
-        '-------------------------------------------------------------------------------------------------------|\n')
+        '----------------------------------------------------------------------------------------------------------------------|\n')
     start = timer()
     criterion = {
         'softmax': nn.CrossEntropyLoss().to(device),
@@ -207,10 +207,10 @@ def train():
         classifer_top1.update(acc[0])
         print('\r', end='', flush=True)
         print(
-            '  %4.1f  |  %5.3f  %6.3f  %6.3f  %6.3f  |  %6.3f  %6.3f  |  %6.3f  %6.3f  %6.3f  | %s'
+            '  %4.1f  |  %5.3f  %6.3f  %6.3f  %6.3f  %6.3f  %6.3f  |  %6.3f  %6.3f  |  %6.3f  %6.3f  %6.3f  | %s'
             % (
                 (iter_num+1) / iter_per_epoch,
-                valid_args[0], valid_args[6], valid_args[3] * 100, valid_args[4] * 100,
+                valid_args[0], valid_args[6], valid_args[3] * 100, valid_args[4] * 100, valid_args[7], valid_args[8],
                 loss_classifier.avg, classifer_top1.avg,
                 float(best_model_ACC), float(best_model_HTER * 100), float(best_model_AUC * 100),
                 time_to_str(timer() - start, 'min'))
@@ -231,10 +231,10 @@ def train():
             save_checkpoint(save_list, is_best, net, config.gpus, config.checkpoint_path, config.best_model_path)
             print('\r', end='', flush=True)
             log.write(
-                '  %4.1f  |  %5.3f  %6.3f  %6.3f  %6.3f  |  %6.3f  %6.3f  |  %6.3f  %6.3f  %6.3f  | %s   %s'
+                '  %4.1f  |  %5.3f  %6.3f  %6.3f  %6.3f  %6.3f  %6.3f  |  %6.3f  %6.3f  |  %6.3f  %6.3f  %6.3f  | %s   %s'
                 % (
                 (iter_num+1) / iter_per_epoch,
-                valid_args[0], valid_args[6], valid_args[3] * 100, valid_args[4] * 100,
+                valid_args[0], valid_args[6], valid_args[3] * 100, valid_args[4] * 100, valid_args[7], valid_args[8],
                 loss_classifier.avg, classifer_top1.avg,
                 float(best_model_ACC), float(best_model_HTER * 100), float(best_model_AUC * 100),
                 time_to_str(timer() - start, 'min'),

@@ -1,5 +1,5 @@
 from utils.utils import AverageMeter, accuracy
-from utils.statistic import get_EER_states, get_HTER_at_thr, calculate, calculate_threshold
+from utils.statistic import get_EER_states, get_HTER_at_thr, calculate, calculate_threshold, get_calculate_at_thr
 from sklearn.metrics import roc_auc_score
 from torch.autograd import Variable
 import torch
@@ -9,6 +9,7 @@ import numpy as np
 
 def eval(valid_dataloader, model, norm_flag):
     device = torch.device('cuda') if (torch.cuda.is_available()) else torch.device('cpu')
+    print('eval device', device)
     criterion = nn.CrossEntropyLoss()
     valid_losses = AverageMeter()
     valid_top1 = AverageMeter()
@@ -57,6 +58,9 @@ def eval(valid_dataloader, model, norm_flag):
     auc_score = roc_auc_score(label_list, prob_list)
     cur_EER_valid, threshold, _, _ = get_EER_states(prob_list, label_list)
     ACC_threshold = calculate_threshold(prob_list, label_list, threshold)
-    cur_HTER_valid = get_HTER_at_thr(prob_list, label_list, threshold)
-    return [valid_losses.avg, valid_top1.avg, cur_EER_valid, cur_HTER_valid, auc_score, threshold, ACC_threshold*100]
+    valid_scorer = get_calculate_at_thr(prob_list, label_list, threshold)
+    cur_APCER_valid = valid_scorer[0]
+    cur_BPCER_valid = valid_scorer[1]
+    cur_HTER_valid = valid_scorer[2]
+    return [valid_losses.avg, valid_top1.avg, cur_EER_valid, cur_HTER_valid, auc_score, threshold, ACC_threshold*100, cur_APCER_valid, cur_BPCER_valid]
 
