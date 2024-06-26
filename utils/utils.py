@@ -243,8 +243,8 @@ def save_checkpoint(save_list, is_best, model, gpus, checkpoint_path, best_model
     best_model_ACC = save_list[3]
     best_model_ACER = save_list[4]
     threshold = save_list[5]
-    apcer = save_list[7]
-    bpcer = save_list[8]
+    apcer = save_list[6]
+    bpcer = save_list[7]
     if(len(gpus) > 1):
         old_state_dict = model.state_dict()
         from collections import OrderedDict
