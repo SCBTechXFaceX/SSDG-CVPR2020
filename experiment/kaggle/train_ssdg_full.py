@@ -46,8 +46,8 @@ def train():
     best_model_HTER = 1.0
     best_model_ACER = 1.0
     best_model_AUC = 0.0
-    # 0:loss, 1:top-1, 2:EER, 3:HTER, 4:ACER, 5:AUC, 6:threshold
-    valid_args = [np.inf, 0, 0, 0, 0, 0, 0, 0]
+    # 0:loss, 1:top-1, 2:EER, 3:HTER, 4:ACER, 5:AUC, 6:threshold, 7:APCER, 8:BPCER
+    valid_args = [np.inf, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     loss_classifier = AverageMeter()
     classifer_top1 = AverageMeter()
