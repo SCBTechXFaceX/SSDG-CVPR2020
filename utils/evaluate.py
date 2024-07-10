@@ -41,6 +41,7 @@ def eval(valid_dataloader, model, norm_flag):
                     target_dict_tmp[videoID[i]] = []
                     output_dict_tmp[videoID[i]].append(cls_out[i].view(1, 2))
                     target_dict_tmp[videoID[i]].append(target[i].view(1))
+    print('Done all prediction')
     prob_list = []
     label_list = []
     for key in prob_dict.keys():
