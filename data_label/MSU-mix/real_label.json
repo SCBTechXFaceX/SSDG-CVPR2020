@@ -1,0 +1,410 @@
+[
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client006_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client008_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client002_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client002_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client013_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client039_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client028_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client028_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client037_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client026_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client026_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client033_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client033_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client022_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client055_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client055_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client051_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client049_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client001_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client001_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client014_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client014_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client005_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client021_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client030_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client034_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client050_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client050_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client054_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client023_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client032_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client029_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client036_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client036_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client012_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client012_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client003_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client007_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client007_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client009_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client009_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client035_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client035_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client024_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client011_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client011_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client048_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client048_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client053_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client053_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client042_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client001_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client014_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client005_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client005_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client021_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client021_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client030_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client034_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client034_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client049_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client049_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client055_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client051_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client051_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client008_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client008_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client006_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client006_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client002_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client013_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client013_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client037_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client037_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client026_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client039_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client039_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client028_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client033_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client022_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client022_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client048_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client053_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client042_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client042_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client035_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client024_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client024_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client011_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client023_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client032_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client032_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client036_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client029_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client029_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client012_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client003_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client003_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client009_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client050_android_SD_scene012_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client054_android_SD_scene011_crop.jpg",
+        "photo_label": 1
+    },
+    {
+        "photo_path": "/kaggle/input/valid-ssdg/valid/real_client054_android_SD_scene010_crop.jpg",
+        "photo_label": 1
+    }
+]

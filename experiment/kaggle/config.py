@@ -20,14 +20,14 @@ class DefaultConfigs(object):
     # test model name
     tgt_best_model_name = 'model_best_0.08_29.pth.tar' 
     # source data information
-    src1_data = 'high'
+    src1_data = 'SiW'
     src1_train_num_frames = 1
-    src2_data = 'middle'
+    src2_data = 'MSU-mix'
     src2_train_num_frames = 1
-    src3_data = 'low'
+    src3_data = 'rose-youtu'
     src3_train_num_frames = 1
     # target data information
-    tgt_data = 'valid'
+    tgt_data = 'celeb'
     tgt_test_num_frames = 1
     # paths information
     checkpoint_path = './' + tgt_data + '_checkpoint/' + model + '/DGFANet/'
