@@ -95,18 +95,18 @@ def get_kaggle_dataset(src1_data, src1_train_num_frames, src2_data, src2_train_n
     tgt_test_data = itar_frames(flag=2, num_frames=tgt_test_num_frames, dataset_name=tgt_data)
 
     src1_train_dataloader_fake = DataLoader(KaggleDataset(src1_train_data_fake, train=True),
-                                            batch_size=batch_size, shuffle=True, num_workers=12)
+                                            batch_size=batch_size, shuffle=True, num_workers=4)
     src1_train_dataloader_real = DataLoader(KaggleDataset(src1_train_data_real, train=True),
-                                            batch_size=batch_size, shuffle=True, num_workers=12)
+                                            batch_size=batch_size, shuffle=True, num_workers=4)
     src2_train_dataloader_fake = DataLoader(KaggleDataset(src2_train_data_fake, train=True),
-                                            batch_size=batch_size, shuffle=True, num_workers=12)
+                                            batch_size=batch_size, shuffle=True, num_workers=4)
     src2_train_dataloader_real = DataLoader(KaggleDataset(src2_train_data_real, train=True),
-                                            batch_size=batch_size, shuffle=True, num_workers=12)
+                                            batch_size=batch_size, shuffle=True, num_workers=4)
     src3_train_dataloader_fake = DataLoader(KaggleDataset(src3_train_data_fake, train=True),
-                                            batch_size=batch_size, shuffle=True, num_workers=12)
+                                            batch_size=batch_size, shuffle=True, num_workers=4)
     src3_train_dataloader_real = DataLoader(KaggleDataset(src3_train_data_real, train=True),
-                                            batch_size=batch_size, shuffle=True, num_workers=12)
-    tgt_dataloader = DataLoader(KaggleDataset(tgt_test_data, train=False), batch_size=batch_size, shuffle=False, num_workers=12)
+                                            batch_size=batch_size, shuffle=True, num_workers=4)
+    tgt_dataloader = DataLoader(KaggleDataset(tgt_test_data, train=False), batch_size=batch_size, shuffle=False, num_workers=4)
     return src1_train_dataloader_fake, src1_train_dataloader_real, \
            src2_train_dataloader_fake, src2_train_dataloader_real, \
            src3_train_dataloader_fake, src3_train_dataloader_real, \
