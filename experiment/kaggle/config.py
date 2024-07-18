@@ -24,10 +24,10 @@ class DefaultConfigs(object):
     src1_train_num_frames = 1
     src2_data = 'MSU-mix'
     src2_train_num_frames = 1
-    src3_data = 'rose-youtu'
+    src3_data = 'celeb'
     src3_train_num_frames = 1
     # target data information
-    tgt_data = 'celeb'
+    tgt_data = 'rose-youtu'
     tgt_test_num_frames = 1
     # paths information
     checkpoint_path = './' + tgt_data + '_checkpoint/' + model + '/DGFANet/'
