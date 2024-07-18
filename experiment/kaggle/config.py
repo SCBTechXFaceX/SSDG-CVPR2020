@@ -20,18 +20,18 @@ class DefaultConfigs(object):
     # test model name
     tgt_best_model_name = 'model_best_0.08_29.pth.tar' 
     # source data information
-    src1_data = 'SiW'
+    src1_data = 'rose-youtu'
     src1_train_num_frames = 1
     src2_data = 'MSU-mix'
     src2_train_num_frames = 1
     src3_data = 'celeb'
     src3_train_num_frames = 1
     # target data information
-    tgt_data = 'rose-youtu'
+    tgt_data = 'SiW'
     tgt_test_num_frames = 1
     # paths information
     checkpoint_path = './' + tgt_data + '_checkpoint/' + model + '/DGFANet/'
-    best_model_path = './' + tgt_data + '_checkpoint/' + model + '/CASM_R_best_model/'
+    best_model_path = './' + tgt_data + '_checkpoint/' + model + '/CAMR_S_best_model/'
     logs = './logs/'
 
 config = DefaultConfigs()
