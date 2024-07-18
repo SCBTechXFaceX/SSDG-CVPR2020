@@ -31,7 +31,7 @@ class DefaultConfigs(object):
     tgt_test_num_frames = 1
     # paths information
     checkpoint_path = './' + tgt_data + '_checkpoint/' + model + '/DGFANet/'
-    best_model_path = './' + tgt_data + '_checkpoint/' + model + '/best_model/'
+    best_model_path = './' + tgt_data + '_checkpoint/' + model + '/CASM_R_best_model/'
     logs = './logs/'
 
 config = DefaultConfigs()
