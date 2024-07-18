@@ -14,7 +14,7 @@ class DefaultConfigs(object):
     gpus = "1"
     batch_size = 10
     norm_flag = True
-    max_iter = 700
+    max_iter = 4000
     lambda_triplet = 1
     lambda_adreal = 0.5
     # test model name
