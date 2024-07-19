@@ -22,16 +22,16 @@ class DefaultConfigs(object):
     # source data information
     src1_data = 'rose-youtu'
     src1_train_num_frames = 1
-    src2_data = 'MSU-mix'
+    src2_data = 'SiW'
     src2_train_num_frames = 1
     src3_data = 'celeb'
     src3_train_num_frames = 1
     # target data information
-    tgt_data = 'SiW'
+    tgt_data = 'MSU-mix'
     tgt_test_num_frames = 1
     # paths information
     checkpoint_path = './' + tgt_data + '_checkpoint/' + model + '/DGFANet/'
-    best_model_path = './' + tgt_data + '_checkpoint/' + model + '/CAMR_S_best_model/'
+    best_model_path = './' + tgt_data + '_checkpoint/' + model + '/CASR_M_best_model/'
     logs = './logs/'
 
 config = DefaultConfigs()
