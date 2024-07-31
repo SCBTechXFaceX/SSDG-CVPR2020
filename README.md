@@ -18,6 +18,12 @@ An overview of the proposed SSDG method:
 - torchvision 0.2
 - cuda 8.0
 
+## Installation
+```bash
+conda env create -f environment.yml
+conda activate ssdg
+```
+
 ## Pre-training
 
 **Dataset.** 
